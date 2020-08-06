@@ -17,6 +17,14 @@
             <%= link_to dinosaur_path(dinosaur), method: :delete, data: {confirm: "Annihilate #{dinosaur.name}?" }, class: 'card-remove-link' do %>
               <i class="fas fa-meteor"></i>
             <% end %>
+            <%= link_to new_dinosaur_pocket_path(dinosaur), class: 'card-pocket-link' do %>
+              <i class="fas fa-skull"></i>
+            <% end %>
+            <div class="card-tags">
+              <% dinosaur.weapons.each do |weapon| %>
+                <span><%= weapon.name %></span>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
